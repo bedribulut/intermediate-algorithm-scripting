@@ -1,0 +1,18 @@
+function pairElement(str) {
+  const myArr = str.split("");
+  function pair(el) {
+    switch (el) {
+      case "A":
+        return ["A", "T"];
+      case "T":
+        return ["T", "A"];
+      case "C":
+        return ["C", "G"];
+      case "G":
+        return ["G", "C"];
+    }
+  }
+  return myArr.map(pair);
+}
+
+pairElement("GCG");

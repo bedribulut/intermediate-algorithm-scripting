@@ -1,0 +1,13 @@
+function translatePigLatin(str) {
+  const csReg = /^[^aeiou]+/;
+  const myCs = str.match(csReg);
+
+  return str.match(csReg) === null ? str.concat("way") 
+  : str
+  .replace(myCs, "")
+  .concat(myCs)
+  .concat("ay");
+
+}
+
+console.log(translatePigLatin("consonant"))

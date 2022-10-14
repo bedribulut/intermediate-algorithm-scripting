@@ -1,0 +1,8 @@
+function destroyer(arr) {
+  const arr2 = Array.prototype.slice.call(arguments, 1);
+  return arr
+    .concat(arr2)
+    .filter(item => arr.includes(item) && !arr2.includes(item));
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);

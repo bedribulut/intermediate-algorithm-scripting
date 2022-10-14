@@ -1,0 +1,29 @@
+function smallestCommons(arr) {
+  let max = Math.max(...arr),
+      min = Math.min(...arr),
+      myArr = [],
+      numDiv = max - min + 1;
+
+  for (let i = min; i <= max; i++) {
+    myArr.push(i);
+  }
+
+  let upperBound = 1;
+  for (let i = min; i <= max; i++) {
+    upperBound *= i;
+  }
+
+  for (let multiple = max; multiple <= upperBound; multiple += max) {
+    let divisorCount = 0;
+    for ( let i = min; i <= max; i++) {
+      if (multiple % i === 0) {
+        divisorCount++;
+      }
+    }
+    if (divisorCount === numDiv) {
+      return multiple;
+    }
+  }
+}
+
+smallestCommons([1,5]);

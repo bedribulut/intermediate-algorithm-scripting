@@ -1,0 +1,27 @@
+function sumPrimes(num) {
+  let arr =[],
+      sqrt = Math.sqrt(num),
+      sum = [];
+  
+  for ( let i = 0; i <= num; i++) {
+    arr.push(i);
+  }
+
+  for ( let i = 2; i <= sqrt; i++) {
+    if (arr[i]) {
+      for (let j = i * i; j <= num; j += i) {
+        arr[j] = false;
+      }
+    }
+  }
+
+  for ( let i = 2; i <= num; i++) {
+    if (arr[i]) {
+      sum.push(i);
+    }
+  }
+
+  return sum.reduce((a,b) => a + b, 0);
+}
+
+console.log(sumPrimes(977));

@@ -1,0 +1,20 @@
+function addTogether() {
+  const first = arguments[0];
+  const second = arguments[1];
+
+  if (typeof(first) !== "number") {
+    return undefined;
+  }
+
+  if (arguments.length === 1) {
+    return (second) => addTogether(first, second);
+  }
+
+  if (typeof(second) !== "number") {
+    return undefined;
+  }
+
+  return first + second;
+}
+
+console.log(addTogether(2,3));

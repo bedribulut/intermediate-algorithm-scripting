@@ -1,0 +1,14 @@
+function fearNotLetter(str) {
+  const num1 = str[0].charCodeAt();
+  const num2 = str[str.length - 1].charCodeAt();
+  const myArr = str.split("");
+
+  for (let i = num1; i <= num2; i++) {
+    let item = String.fromCharCode(i);
+    if (!myArr.includes(item)) {
+      return item;
+      }
+    }
+}
+
+fearNotLetter("abce");
